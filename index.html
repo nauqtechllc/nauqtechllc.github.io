@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NauqTech — IT & Security for Small Business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F0E9D8;
+    --bg-panel: #E6DEC8;
+    --text: #1B2436;
+    --text-muted: #565F73;
+    --accent: #B96A1A;
+    --accent-2: #2F7D6E;
+    --border: #C9BFA0;
+    --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    --font-body: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+  }
+ 
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10192B;
+      --bg-panel: #182238;
+      --text: #EDE8DE;
+      --text-muted: #A9B0C0;
+      --accent: #E3A23C;
+      --accent-2: #4FA490;
+      --border: #2A3550;
+    }
+  }
+ 
+  :root[data-theme="dark"] {
+    --bg: #10192B;
+    --bg-panel: #182238;
+    --text: #EDE8DE;
+    --text-muted: #A9B0C0;
+    --accent: #E3A23C;
+    --accent-2: #4FA490;
+    --border: #2A3550;
+  }
+ 
+  * { box-sizing: border-box; }
+ 
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+ 
+  a { color: inherit; }
+ 
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+ 
+  header.top {
+    padding: 28px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+ 
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+  }
+ 
+  .top-cta {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 9px 16px;
+    border: 1.5px solid var(--text);
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+ 
+  .top-cta:hover { background: var(--text); color: var(--bg); }
+ 
+  main { padding-top: 8px; }
+ 
+  .hero {
+    padding: 64px 0 48px;
+  }
+ 
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 0.98;
+    margin: 0 0 20px;
+    max-width: 11ch;
+  }
+ 
+  .hero p {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 46ch;
+    margin: 0 0 28px;
+  }
+ 
+  .cta-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: #1B2436;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 3px;
+  }
+ 
+  .cta-note {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+ 
+  section.offerings {
+    padding: 32px 0 8px;
+  }
+ 
+  section.offerings > p.lede {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin: 0 0 28px;
+    max-width: 52ch;
+  }
+ 
+  .ticket {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--accent);
+    border-radius: 2px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+  }
+ 
+  .ticket:nth-of-type(2) { border-left-color: var(--accent-2); }
+ 
+  .ticket-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+ 
+  .ticket-head h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    margin: 0;
+  }
+ 
+  .ticket-price {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+ 
+  .ticket:nth-of-type(2) .ticket-price { color: var(--accent-2); }
+ 
+  .ticket-terms {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: block;
+    font-weight: 400;
+    margin-top: 2px;
+  }
+ 
+  .ticket p.desc {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 15.5px;
+    max-width: 58ch;
+  }
+ 
+  .proof {
+    margin: 40px 0 48px;
+    padding: 22px 24px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+  }
+ 
+  .proof p {
+    margin: 0;
+    font-size: 15.5px;
+    color: var(--text-muted);
+  }
+ 
+  .proof p.label {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+ 
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+ 
+  footer a { text-decoration: none; color: var(--accent); font-weight: 600; }
+ 
+  @media (max-width: 560px) {
+    .hero h1 { font-size: 40px; max-width: 9ch; }
+    .hero p { font-size: 16.5px; }
+    header.top { flex-direction: row; }
+    .ticket-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+ 
+<div class="wrap">
+  <header class="top">
+    <div class="wordmark">NauqTech</div>
+    <a class="top-cta" href="mailto:nauqtechllc+bookings@gmail.com">Book a call</a>
+  </header>
+ 
+  <main>
+    <section class="hero">
+      <h1>We fix what your business can't afford to ignore.</h1>
+      <p>IT and security work for small businesses and non-profits, explained in plain language, with no pressure to buy more than you need.</p>
+      <a class="cta-primary" href="mailto:hello@nauqtech.com?subject=Free%2015-minute%20call">Book a free 15-minute call</a>
+      <p class="cta-note">No cost, no obligation — just a straight answer on where you stand.</p>
+    </section>
+ 
+    <section class="offerings">
+      <p class="lede">Three ways to get started, from a quick checkup to ongoing support.</p>
+ 
+      <div class="ticket">
+        <div class="ticket-head">
+          <h3>Security Checkup</h3>
+          <div class="ticket-price">$100<span class="ticket-terms">one-time</span></div>
+        </div>
+        <p class="desc">A full technical scan of your systems, followed by a written report ranking what's weak and exactly how to fix it. No jargon, no upsell.</p>
+      </div>
+ 
+      <div class="ticket">
+        <div class="ticket-head">
+          <h3>IT &amp; Security Retainer</h3>
+          <div class="ticket-price">$250<span class="ticket-terms">per month</span></div>
+        </div>
+        <p class="desc">Monthly re-scans, a walkthrough of your maintenance checklist, and two hours of general IT support included every month.</p>
+      </div>
+ 
+      <div class="ticket">
+        <div class="ticket-head">
+          <h3>Data &amp; PDF Automation</h3>
+          <div class="ticket-price">$500–2,000<span class="ticket-terms">per project</span></div>
+        </div>
+        <p class="desc">A custom tool built to pull data out of your PDFs automatically, so your team stops retyping it by hand.</p>
+      </div>
+    </section>
+ 
+    <div class="proof">
+      <p class="label">Recent work</p>
+      <p>Rebuilt an aging, unsecured database for a non-profit client and built a tool that automated their manual data entry, cutting hours of retyping every week.</p>
+    </div>
+  </main>
+ 
+  <footer>
+    <span>NauqTech &copy; 2026</span>
+    <a href="mailto:nauqtechllc@gmail.com">Email us today!</a>
+  </footer>
+</div>
+ 
+</body>
+</html>
